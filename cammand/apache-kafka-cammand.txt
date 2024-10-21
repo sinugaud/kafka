@@ -1,0 +1,24 @@
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+
+
+
+Old -veersion //kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+
+
+ .\kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 5 --topic complete-task
+
+kafka-topics.bat --list --zookeeper localhost:2181
+
+PS D:\kafka\bin\windows> .\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test
+
+PS D:\kafka\bin\windows> .\kafka-console-producer.bat --bootstrap-server localhost:9092 --topic test
+
+.\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic teste --from-beginning
+list of topic
+PS D:\kafka\bin\windows> ./kafka-topics.bat --list --bootstrap-server localhost:9092
+
+
+ .\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic rfp_approval
