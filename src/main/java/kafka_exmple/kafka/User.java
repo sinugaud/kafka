@@ -1,13 +1,33 @@
 package kafka_exmple.kafka;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
 public class User {
-    String name;
-    String age;
+    @JacksonXmlProperty(localName = "id")
+    private int id;
+
+    @JacksonXmlProperty(localName = "name")
+    private String name;
+
+    // Getters and Setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "User{id=" + id + ", name='" + name + "'}";
+    }
 }
